@@ -1,6 +1,6 @@
 use std::collections::HashMap;
 
-use prc::{ParamKind, ParamStruct, ParamList, hash40::{Hash40, to_hash40}};
+use prc::{ParamKind, ParamStruct, ParamList, hash40::{Hash40, hash40}};
 
 use crate::{GetPTag, ParamTag};
 
@@ -57,7 +57,7 @@ pub fn apply_patch_list(patch: &ParamList, source: &mut ParamList) -> Result<()>
     }
 
     for (idx, param) in patch.iter().enumerate() {
-        if *param == ParamKind::Hash(to_hash40("dummy")) {
+        if *param == ParamKind::Hash(hash40("dummy")) {
             continue;
         }
 
