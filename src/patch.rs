@@ -52,9 +52,9 @@ pub fn apply_patch_list(patch: &ParamList, source: &mut ParamList) -> Result<()>
     let ParamList(patch) = patch;
     let ParamList(source) = source;
 
-    if patch.len() < source.len() {
+    /*if patch.len() < source.len() {
         return Err(Error::ShortPatchList);
-    }
+    }*/
 
     for (idx, param) in patch.iter().enumerate() {
         if *param == ParamKind::Hash(hash40("dummy")) {
